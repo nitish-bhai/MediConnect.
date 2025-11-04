@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediVoice AI Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="header-text">
+            <h1>MediVoice AI Assistant</h1>
+            <p>Your virtual medical consultant for health advice and symptom analysis</p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="calling-screen">
+            <div class="profile">
+                <div class="profile-pic">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h2>AI Medical Assistant</h2>
+                <p>Virtual Medical Assistant</p>
+            </div>
+
+            <div class="call-status">
+                <span class="status-indicator status-offline" id="status-indicator"></span>
+                <span id="call-status">Ready to connect</span>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+
+            <div class="transcript-box" id="transcript-container">
+                <div class="no-data" id="no-transcript">
+                    Conversation transcript will appear here...
+                </div>
+            </div>
+
+            <div class="call-controls">
+                <button class="control-btn" id="mute-btn" title="Mute">
+                    <i class="fas fa-microphone"></i>
+                </button>
+               
+                <button class="control-btn" id="record-btn" title="Record">
+                    <i class="fas fa-record-vinyl"></i>
+                </button>
+            </div>
+
+            <div class="vapi-button-container">
+                <div id="vapi-button"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="history-section">
+            <div class="section-title">
+                <i class="fas fa-history"></i>
+                Call History
+            </div>
+
+            <div class="history-controls">
+                <button class="history-btn" id="clear-history">
+                    <i class="fas fa-trash"></i> Clear History
+                </button>
+                <button class="history-btn primary" id="generate-report">
+                    <i class="fas fa-file-medical-alt"></i> Generate Report
+                </button>
+            </div>
+
+            <div class="call-history" id="call-history">
+                <div class="no-data" id="no-history">No call history available</div>
+            </div>
+        </div>
+
+        <div class="report-section" id="report-section" style="display: none;">
+            <div class="section-title">
+                <i class="fas fa-file-medical"></i>
+                Medical Consultation Report
+            </div>
+
+            <div class="report-content" id="report-content">
+            </div>
+
+            <div class="history-controls" style="margin-top: 15px;">
+                <button class="history-btn primary" id="download-report">
+                    <i class="fas fa-download"></i> Download Report
+                </button>
+                <button class="history-btn" id="close-report">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conversation Modal -->
+    <div class="modal" id="conversation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Complete Conversation Transcript</h3>
+                <button class="close-modal" id="close-conversation-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="conversation-transcript" id="conversation-transcript">
+                </div>
+                <div class="conversation-actions">
+                    <button class="history-btn primary" id="summarize-chat">
+                        <i class="fas fa-file-contract"></i> Summarize & Generate Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vapi-integration2.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
