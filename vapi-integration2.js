@@ -4,8 +4,8 @@
 
 (function () {
   // ===== CONFIG =====
-  const assistant = "f606b5ce-e583-458b-95d0-c1d621031093";
-  const apiKey = "163fa35e-d4c8-438f-8c67-d4684239d1ec";
+  const assistant = "5f7cb27a-e5ef-46df-91ea-73932a425b5d";
+  const apiKey = "6e018693-8276-4b39-a707-8defb65c57e1";
   const sdkUrl = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
   const sdkButtonSelectorCandidates = [
     ".vapi-call-button",                          // common
