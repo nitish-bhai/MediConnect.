@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MediConnect - Virtual Healthcare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,999 +24,176 @@
             --transition: all 0.3s ease;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f0f9ff; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: #f0f9ff;
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-
-        .logo i {
-            color: var(--primary);
-            font-size: 28px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            padding: 10px 22px;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-light);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0 80px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        .hero-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .hero-btn {
-            padding: 15px 30px;
-            font-size: 16px;
-            border-radius: 12px;
-        }
-
-        .btn-light {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-light:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Search Section */
-        .search-section {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            margin: -40px auto 50px;
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
-        }
-
-        .search-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .search-title {
-            text-align: center;
-            margin-bottom: 25px;
-            color: var(--primary-dark);
-            font-size: 24px;
-        }
-
-        .search-box {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 18px 60px 18px 25px;
-            border: 2px solid #e2e8f0;
-            border-radius: 15px;
-            font-size: 16px;
-            transition: var(--transition);
-            background: #f8fafc;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-            background: white;
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray);
-            font-size: 20px;
-        }
-
-        /* Doctors Section */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .doctors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .doctor-card {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .doctor-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .doctor-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(29, 78, 216, 0.05));
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: 20px;
-        }
-
-        .doctor-card:hover::before {
-            opacity: 1;
-        }
-
-        .doctor-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .doctor-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .doctor-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
-        }
-
-        .doctor-info {
-            padding: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .doctor-name {
-            font-size: 22px;
-            margin-bottom: 5px;
-            color: var(--primary-dark);
-        }
-
-        .doctor-specialty {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .doctor-experience {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .doctor-bio {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.5;
-            font-size: 14px;
-        }
-
-        .doctor-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .doctor-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .feature-tag {
-            background: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .doctor-card:hover .feature-tag {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .consult-btn {
-            width: 100%;
-            padding: 14px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .consult-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: var(--transition);
-        }
-
-        .consult-btn:hover::before {
-            left: 100%;
-        }
-
-        .consult-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 80px 0;
-            background: white;
-            margin: 50px 0;
-            border-radius: 30px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin: 0 auto 20px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(10deg);
-            background: var(--primary-dark);
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .service-card p {
-            color: var(--gray);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-light), white);
-            border-radius: 30px;
-            margin: 50px 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 36px;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-        }
-
-        /* Auth Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 450px;
-            padding: 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-header h3 {
-            color: var(--primary-dark);
-            font-size: 24px;
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--dark);
-        }
-
-        .auth-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .form-group input {
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-
-        .auth-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .auth-tab {
-            padding: 12px 20px;
-            background: none;
-            border: none;
-            font-weight: 600;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .auth-tab.active {
-            color: var(--primary);
-        }
-
-        .auth-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        .auth-error {
-            color: var(--danger);
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-            padding: 10px;
-            background: rgba(239, 68, 68, 0.1);
-            border-radius: 8px;
-        }
-
-        /* User Info */
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--dark);
-        }
-
-        .user-avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 18px;
-            transition: var(--transition);
-        }
-
-        .user-avatar:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 60px 0 20px;
-            margin-top: 50px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-column h4 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .footer-column p, .footer-column a {
-            color: #cbd5e1;
-            margin-bottom: 12px;
-            display: block;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-column a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 40px;
-            }
-            
-            .doctors-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .hero {
-                padding: 80px 0 60px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .search-section {
-                padding: 30px 20px;
-                margin: -30px auto 40px;
-            }
-
-            .doctors-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .auth-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .auth-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
-            }
-        }
-
-        /* Loading State */
-        .loading {
-            opacity: 0.7;
-            pointer-events: none;
-            position: relative;
-        }
-
-        .loading::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            margin: -10px 0 0 -10px;
-            border: 2px solid transparent;
-            border-top: 2px solid currentColor;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--success);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 3000;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .toast.error {
-            background: var(--danger);
-        }
-
-        /* Pulse Animation */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .float {
-            animation: float 5s ease-in-out infinite;
-        }
-
-        /* Section Visibility */
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        /* No Results Message */
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            color: var(--gray);
-            font-size: 18px;
-            grid-column: 1 / -1;
-        }
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky; top: 0; z-index: 1000; transition: var(--transition);
+        }
+
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 0; }
+        .logo { display:flex; align-items:center; gap:10px; font-size:24px; font-weight:700; color:var(--primary-dark); text-decoration:none; }
+        .logo i { color:var(--primary); font-size:28px; }
+        .nav-links { display:flex; gap:30px; }
+        .nav-links a { text-decoration:none; color:var(--dark); font-weight:500; transition:var(--transition); position:relative; }
+        .nav-links a:hover { color:var(--primary); }
+        .nav-links a::after { content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background:var(--primary); transition:var(--transition); }
+        .nav-links a:hover::after { width:100%; }
+        .auth-buttons { display:flex; gap:15px; }
+
+        .btn { padding:10px 22px; border-radius:10px; font-weight:600; cursor:pointer; transition:var(--transition); border:none; font-size:14px; display:inline-flex; align-items:center; gap:8px; }
+        .btn-outline { background:transparent; border:2px solid var(--primary); color:var(--primary); }
+        .btn-primary { background:var(--primary); color:white; box-shadow:0 4px 14px rgba(37,99,235,0.3); }
+        .btn:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+        .btn-primary:hover { background:var(--primary-dark); box-shadow:0 6px 20px rgba(37,99,235,0.4); }
+        .btn-outline:hover { background:var(--primary-light); }
+
+        .hero { padding:100px 0 80px; background: linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; position:relative; overflow:hidden; }
+        .hero::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+
+        .hero-content { max-width:700px; margin:0 auto; text-align:center; position:relative; z-index:1; }
+        .hero h1 { font-size:48px; margin-bottom:20px; line-height:1.2; }
+        .hero p { font-size:20px; margin-bottom:30px; opacity:0.9; }
+        .hero-buttons { display:flex; gap:15px; justify-content:center; margin-top:30px; }
+        .hero-btn { padding:15px 30px; font-size:16px; border-radius:12px; }
+        .btn-light { background: rgba(255,255,255,0.2); color:white; backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.3); }
+        .btn-light:hover { background: rgba(255,255,255,0.3); }
+
+        .search-section { background:white; padding:40px; border-radius:20px; box-shadow:var(--card-shadow); margin:-40px auto 50px; position:relative; z-index:10; max-width:900px; }
+        .search-container { max-width:800px; margin:0 auto; }
+        .search-title { text-align:center; margin-bottom:25px; color:var(--primary-dark); font-size:24px; }
+        .search-box { position:relative; margin-bottom:20px; }
+        .search-box input { width:100%; padding:18px 60px 18px 25px; border:2px solid #e2e8f0; border-radius:15px; font-size:16px; transition:var(--transition); background:#f8fafc; }
+        .search-box input:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,0.2); background:white; }
+        .search-icon { position:absolute; right:25px; top:50%; transform:translateY(-50%); color:var(--gray); font-size:20px; }
+
+        .section-title { text-align:center; margin-bottom:50px; }
+        .section-title h2 { font-size:36px; color:var(--primary-dark); margin-bottom:15px; }
+        .section-title p { color:var(--gray); font-size:18px; max-width:600px; margin:0 auto; }
+
+        .doctors-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap:30px; margin-bottom:80px; }
+        .doctor-card { background: rgba(255,255,255,0.7); border-radius:20px; overflow:hidden; box-shadow:var(--card-shadow); transition:var(--transition); cursor:pointer; position:relative; transform-style:preserve-3d; perspective:1000px; backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.3); }
+        .doctor-card:hover { transform: translateY(-10px) rotateX(5deg); box-shadow:0 20px 40px rgba(0,0,0,0.15); background: rgba(255,255,255,0.9); }
+        .doctor-image { height:200px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); display:flex; align-items:center; justify-content:center; color:white; position:relative; overflow:hidden; }
+        .doctor-image img { width:100%; height:100%; object-fit:cover; display:block; }
+        .doctor-image::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3)); }
+
+        .doctor-info { padding:25px; position:relative; z-index:1; }
+        .doctor-name { font-size:22px; margin-bottom:5px; color:var(--primary-dark); }
+        .doctor-specialty { color:var(--primary); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+        .doctor-experience { display:flex; align-items:center; gap:8px; color:var(--gray); margin-bottom:15px; font-size:14px; }
+        .doctor-bio { color:var(--gray); margin-bottom:20px; line-height:1.5; font-size:14px; }
+        .doctor-rating { display:flex; align-items:center; gap:5px; color:var(--accent); margin-bottom:20px; }
+        .doctor-features { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+        .feature-tag { background:var(--primary-light); color:var(--primary-dark); padding:5px 12px; border-radius:20px; font-size:12px; font-weight:500; transition:var(--transition); }
+        .doctor-card:hover .feature-tag { transform: translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+
+        .consult-btn { width:100%; padding:14px; background:var(--primary); color:white; border:none; border-radius:12px; font-weight:600; cursor:pointer; transition:var(--transition); display:flex; align-items:center; justify-content:center; gap:8px; position:relative; overflow:hidden; }
+        .consult-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition:var(--transition); }
+        .consult-btn:hover::before { left:100%; }
+        .consult-btn:hover { background:var(--primary-dark); transform:translateY(-2px); }
+
+        .services-section { padding:80px 0; background:white; margin:50px 0; border-radius:30px; box-shadow:var(--card-shadow); }
+        .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:50px; }
+        .service-card { background:var(--light); padding:30px; border-radius:20px; text-align:center; transition:var(--transition); box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        .service-card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.1); background:white; }
+        .service-icon { width:80px; height:80px; background:var(--primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 20px; transition:var(--transition); }
+        .service-card:hover .service-icon { transform:scale(1.1) rotate(10deg); background:var(--primary-dark); }
+
+        .about-section { padding:80px 0; background: linear-gradient(135deg,var(--primary-light),white); border-radius:30px; margin:50px 0; }
+        .about-content { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+        .about-text h2 { font-size:36px; color:var(--primary-dark); margin-bottom:20px; }
+        .about-text p { color:var(--gray); margin-bottom:20px; line-height:1.7; }
+
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center; backdrop-filter: blur(5px); }
+        .modal.active { display:flex; animation:fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+        .modal-content { background:white; border-radius:20px; width:90%; max-width:450px; padding:30px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); transform:translateY(20px); transition: transform 0.3s ease; }
+        .modal.active .modal-content { transform:translateY(0); }
+        .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+        .modal-header h3 { color:var(--primary-dark); font-size:24px; }
+        .close-modal { background:none; border:none; font-size:24px; color:var(--gray); cursor:pointer; transition:var(--transition); }
+        .close-modal:hover { color:var(--dark); }
+        .auth-form { display:flex; flex-direction:column; gap:20px; }
+        .form-group { display:flex; flex-direction:column; gap:8px; }
+        .form-group label { font-weight:500; color:var(--dark); }
+        .form-group input { padding:15px; border:2px solid #e2e8f0; border-radius:10px; font-size:16px; transition:var(--transition); }
+        .form-group input:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,0.2); }
+
+        .auth-tabs { display:flex; margin-bottom:20px; border-bottom:2px solid #e2e8f0; }
+        .auth-tab { padding:12px 20px; background:none; border:none; font-weight:600; color:var(--gray); cursor:pointer; transition:var(--transition); position:relative; }
+        .auth-tab.active { color:var(--primary); }
+        .auth-tab.active::after { content:''; position:absolute; bottom:-2px; left:0; width:100%; height:2px; background:var(--primary); }
+
+        .auth-error { color:var(--danger); text-align:center; margin-top:10px; display:none; padding:10px; background: rgba(239,68,68,0.1); border-radius:8px; }
+
+        .user-info { display:flex; align-items:center; gap:12px; color:var(--dark); }
+        .user-avatar { width:42px; height:42px; border-radius:50%; background:var(--primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:18px; transition:var(--transition); }
+        .user-avatar:hover { transform:scale(1.1); }
+
+        footer { background:var(--primary-dark); color:white; padding:60px 0 20px; margin-top:50px; }
+        .footer-content { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:40px; margin-bottom:30px; }
+        .footer-column h4 { font-size:20px; margin-bottom:20px; position:relative; padding-bottom:10px; }
+        .footer-column h4::after { content:''; position:absolute; bottom:0; left:0; width:40px; height:3px; background:var(--primary); }
+        .footer-column p, .footer-column a { color:#cbd5e1; margin-bottom:12px; display:block; text-decoration:none; transition:var(--transition); }
+        .footer-column a:hover { color:white; transform:translateX(5px); }
+        .social-links { display:flex; gap:15px; margin-top:20px; }
+        .social-links a { width:42px; height:42px; border-radius:50%; background: rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+        .social-links a:hover { background:var(--primary); transform:translateY(-3px); }
+
+        .copyright { text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); color:#94a3b8; font-size:14px; }
+
+        @media (max-width:992px) {
+            .hero h1 { font-size:40px; }
+            .doctors-grid { grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); }
+            .about-content { grid-template-columns:1fr; gap:30px; }
+        }
+
+        @media (max-width:768px) {
+            .navbar { flex-direction:column; gap:15px; }
+            .nav-links { gap:20px; }
+            .hero { padding:80px 0 60px; }
+            .hero h1 { font-size:32px; }
+            .hero p { font-size:18px; }
+            .hero-buttons { flex-direction:column; align-items:center; }
+            .search-section { padding:30px 20px; margin:-30px auto 40px; }
+            .doctors-grid { grid-template-columns:1fr; }
+            .services-grid { grid-template-columns:1fr; }
+            .footer-content { grid-template-columns:1fr; gap:30px; }
+            .about-stats { grid-template-columns:1fr; }
+        }
+
+        @media (max-width:576px) {
+            .nav-links { flex-wrap:wrap; justify-content:center; }
+            .auth-buttons { flex-direction:column; width:100%; }
+            .auth-buttons .btn { width:100%; justify-content:center; }
+            .hero h1 { font-size:28px; }
+            .section-title h2 { font-size:28px; }
+        }
+
+        .loading { opacity:0.7; pointer-events:none; position:relative; }
+        .loading::after { content:''; position:absolute; top:50%; left:50%; width:20px; height:20px; margin:-10px 0 0 -10px; border:2px solid transparent; border-top:2px solid currentColor; border-radius:50%; animation:spin 1s linear infinite; }
+        @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+
+        .toast { position:fixed; bottom:20px; right:20px; background:var(--success); color:white; padding:15px 25px; border-radius:10px; box-shadow:0 10px 25px rgba(0,0,0,0.2); display:flex; align-items:center; gap:10px; z-index:3000; transform:translateY(100px); opacity:0; transition:transform 0.3s ease, opacity 0.3s ease; }
+        .toast.show { transform:translateY(0); opacity:1; }
+        .toast.error { background:var(--danger); }
+
+        .pulse { animation:pulse 2s infinite; }
+        @keyframes pulse { 0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)} }
+
+        .float { animation:float 5s ease-in-out infinite; }
+        @keyframes float { 0%{transform:translateY(0px)}50%{transform:translateY(-10px)}100%{transform:translateY(0px)} }
+
+        .section { display:none; }
+        .section.active { display:block; animation:fadeIn 0.5s ease; }
+
+        .no-results { text-align:center; padding:40px; color:var(--gray); font-size:18px; grid-column:1 / -1; }
     </style>
 </head>
 <body>
@@ -1035,19 +212,13 @@
                     <a href="#about" class="nav-link" data-section="about">About</a>
                 </div>
                 <div class="auth-buttons" id="auth-buttons">
-                    <button class="btn btn-outline" id="login-btn">
-                        <i class="fas fa-sign-in-alt"></i>Login
-                    </button>
-                    <button class="btn btn-primary" id="signup-btn">
-                        <i class="fas fa-user-plus"></i>Sign Up
-                    </button>
+                    <button class="btn btn-outline" id="login-btn"><i class="fas fa-sign-in-alt"></i>Login</button>
+                    <button class="btn btn-primary" id="signup-btn"><i class="fas fa-user-plus"></i>Sign Up</button>
                 </div>
-                <div class="user-info" id="user-info" style="display: none;">
+                <div class="user-info" id="user-info" style="display:none;">
                     <div class="user-avatar" id="user-avatar">U</div>
                     <span id="user-name">User</span>
-                    <button class="btn btn-outline" id="logout-btn">
-                        <i class="fas fa-sign-out-alt"></i>Logout
-                    </button>
+                    <button class="btn btn-outline" id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</button>
                 </div>
             </nav>
         </div>
@@ -1055,18 +226,15 @@
 
     <!-- Home Section -->
     <section id="home" class="section active">
-        <!-- Hero Section -->
-        <div class="hero" id="home">
+        <div class="hero">
             <div class="container">
                 <div class="hero-content">
                     <h1>Virtual Healthcare When You Need It Most</h1>
                     <p>Connect with top doctors from the comfort of your home. Get personalized medical advice, e-prescriptions, and treatment plans.</p>
-                    
                 </div>
             </div>
         </div>
 
-        <!-- Search Section -->
         <section class="container">
             <div class="search-section">
                 <div class="search-container">
@@ -1075,19 +243,18 @@
                         <input type="text" id="search-input" placeholder="Search by name, specialty, or symptoms...">
                         <i class="fas fa-search search-icon"></i>
                     </div>
-                    <p style="text-align: center; color: var(--gray); font-size: 14px;">Try: "Cardiologist", "headache", "Dr. Sharma", etc.</p>
+                    <p style="text-align:center; color:var(--gray); font-size:14px;">Try: "Cardiologist", "headache", "Dr. Sharma", etc.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Doctors Section -->
         <section class="container" id="doctors">
             <div class="section-title">
                 <h2>Our Medical Specialists</h2>
                 <p>Choose from our team of experienced and certified doctors</p>
             </div>
             <div class="doctors-grid" id="doctors-grid">
-                <!-- Doctors will be loaded here dynamically -->
+                <!-- dynamically filled -->
             </div>
         </section>
     </section>
@@ -1101,44 +268,32 @@
             </div>
             <div class="services-grid">
                 <div class="service-card float">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-comments"></i></div>
                     <h3>Online Consultation</h3>
                     <p>Connect with doctors via secure online consultations from anywhere. Available in multiple languages.</p>
                 </div>
-                <div class="service-card float" style="animation-delay: 0.5s;">
-                    <div class="service-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
+                <div class="service-card float" style="animation-delay:0.5s;">
+                    <div class="service-icon"><i class="fas fa-pills"></i></div>
                     <h3>E-Prescriptions</h3>
                     <p>Get digital prescriptions that can be used at any pharmacy. Valid across all locations.</p>
                 </div>
-                <div class="service-card float" style="animation-delay: 1s;">
-                    <div class="service-icon">
-                        <i class="fas fa-file-medical"></i>
-                    </div>
+                <div class="service-card float" style="animation-delay:1s;">
+                    <div class="service-icon"><i class="fas fa-file-medical"></i></div>
                     <h3>Health Records</h3>
                     <p>Digitally store and access your medical records, lab reports, and prescriptions securely.</p>
                 </div>
-                <div class="service-card float" style="animation-delay: 1.5s;">
-                    <div class="service-icon">
-                        <i class="fas fa-ambulance"></i>
-                    </div>
+                <div class="service-card float" style="animation-delay:1.5s;">
+                    <div class="service-icon"><i class="fas fa-ambulance"></i></div>
                     <h3>Emergency Care</h3>
                     <p>24/7 emergency consultation and guidance for urgent medical situations.</p>
                 </div>
-                <div class="service-card float" style="animation-delay: 2s;">
-                    <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
+                <div class="service-card float" style="animation-delay:2s;">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
                     <h3>Chronic Care</h3>
                     <p>Continuous monitoring and management for chronic conditions like diabetes, hypertension, etc.</p>
                 </div>
-                <div class="service-card float" style="animation-delay: 2.5s;">
-                    <div class="service-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
+                <div class="service-card float" style="animation-delay:2.5s;">
+                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
                     <h3>Second Opinion</h3>
                     <p>Get expert second opinions from top specialists across major hospitals.</p>
                 </div>
@@ -1209,7 +364,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
                 <div class="auth-error" id="login-error"></div>
             </form>
-            <form class="auth-form" id="signup-form" style="display: none;">
+            <form class="auth-form" id="signup-form" style="display:none;">
                 <div class="form-group">
                     <label for="signup-name">Full Name</label>
                     <input type="text" id="signup-name" required>
@@ -1228,10 +383,8 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast"></div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1280,9 +433,19 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
-        // Doctors data with Indian names and details
+        // Doctors data
         const doctors = [
-            
+            {
+                id: 1,
+                name: "Dr. Indra kumar singh",
+                specialty: "Cardiologist",
+                experience: "15 years",
+                bio: "Senior Consultant at Apollo Hospitals, Delhi. Specialized in interventional cardiology and heart disease prevention.",
+                rating: 4.9,
+                 image: "https://static.vecteezy.com/system/resources/previews/028/287/384/large_2x/a-mature-indian-male-doctor-on-a-white-background-ai-generated-photo.jpg",
+                symptoms: ["chest pain", "heart palpitations", "high blood pressure", "shortness of breath"],
+                features: ["ECG", "Echocardiography", "Cardiac Consultation"]
+            },
             {
                 id: 2,
                 name: "Dr. Priya Patel",
@@ -1323,7 +486,7 @@
                 experience: "310+ Online Sessions",
                 bio: "Mental health expert with focus on anxiety, depression and stress management.",
                 rating: 4.8,
-                image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 symptoms: ["anxiety", "depression", "stress", "mood swings", "insomnia"],
                 features: ["Therapy", "Medication", "Counseling"]
             },
@@ -1334,7 +497,7 @@
                 experience: "290+ Online Sessions",
                 bio: "Joint replacement specialist. Expert in sports injuries and arthritis.",
                 rating: 4.9,
-                image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 symptoms: ["joint pain", "back pain", "fractures", "sports injuries", "arthritis"],
                 features: ["X-Ray", "Physical Therapy", "Surgical Consult"]
             },
@@ -1345,7 +508,7 @@
                 experience: "400+ Online Sessions",
                 bio: "Senior Gastroenterologist. Specializes in liver diseases and endoscopy.",
                 rating: 4.7,
-                image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 symptoms: ["stomach pain", "indigestion", "diarrhea", "constipation", "heartburn"],
                 features: ["Endoscopy", "Colonoscopy", "Diet Planning"]
             },
@@ -1357,9 +520,8 @@
                 bio: "Experienced General Physician dedicated to providing holistic care, accurate diagnosis, preventive health advice and treatment.",
                 rating: 4.8,
                 image: "https://img.freepik.com/premium-photo/indian-female-doctor_1309256-3.jpg",
-               symptoms: ["fever", "cough", "headache", "fatigue", "body pain", "stomach ache", "nausea", "cold", "sore throat", "dizziness"],
-               features: ["General Health Checkup", "Fever", "Cold"]
-
+                symptoms: ["fever","cough","headache","fatigue","body pain","stomach ache","nausea","cold","sore throat","dizziness"],
+                features: ["General Health Checkup","Fever","Cold"]
             },
             {
                 id: 9,
@@ -1369,8 +531,8 @@
                 bio: "Respiratory specialist with expertise in asthma, COPD and TB treatment.",
                 rating: 4.7,
                 image: "https://img.freepik.com/premium-photo/medical-professional-indian-doctor-with-stethoscope-clean-white-background_846334-2772.jpg?w=360",
-                symptoms: ["cough", "shortness of breath", "wheezing", "chest tightness", "asthma"],
-                features: ["Spirometry", "Chest X-Ray", "Breathing Treatments"]
+                symptoms: ["cough","shortness of breath","wheezing","chest tightness","asthma"],
+                features: ["Spirometry","Chest X-Ray","Breathing Treatments"]
             },
             {
                 id: 10,
@@ -1380,8 +542,8 @@
                 bio: "Allergy and immunology specialist helping patients manage environmental and food allergies.",
                 rating: 4.6,
                 image: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA4L3Jhd3BpeGVsX29mZmljZV8yOV9waG90b19vZl9hX21pZGRsZV9hZ2VfZmVtYWxlX2luZGlhbl9kb2N0b3Jfc19iMzM1ODY5MS02ZDk0LTQ3YjgtYWQ4MC0xZmQwZmZjNjFjODlfMS5qcGc.jpg",
-                symptoms: ["sneezing", "runny nose", "itchy eyes", "hives", "food reactions"],
-                features: ["Allergy Testing", "Immunotherapy", "Treatment Plans"]
+                symptoms: ["sneezing","runny nose","itchy eyes","hives","food reactions"],
+                features: ["Allergy Testing","Immunotherapy","Treatment Plans"]
             }
         ];
 
@@ -1413,46 +575,42 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetSection = this.getAttribute('data-section');
-                
-                // Update active nav link
                 navLinks.forEach(nav => nav.classList.remove('active'));
                 this.classList.add('active');
-                
-                // Show target section
                 sections.forEach(section => {
                     section.classList.remove('active');
-                    if (section.id === targetSection) {
-                        section.classList.add('active');
-                    }
+                    if (section.id === targetSection) section.classList.add('active');
                 });
-                
-                // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
-        // Display doctors
+        // Display doctors with fallback image
         function displayDoctors(doctorsToDisplay = doctors) {
             doctorsGrid.innerHTML = '';
-            
+
             if (doctorsToDisplay.length === 0) {
                 const noResults = document.createElement('div');
                 noResults.className = 'no-results';
                 noResults.innerHTML = `
-                    <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <i class="fas fa-search" style="font-size:48px; margin-bottom:20px; opacity:0.5;"></i>
                     <h3>No doctors found</h3>
                     <p>Try adjusting your search terms</p>
                 `;
                 doctorsGrid.appendChild(noResults);
                 return;
             }
-            
+
             doctorsToDisplay.forEach(doctor => {
+                // fallback image when doctor.image is missing
+                const fallbackImage = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60';
+                const imgSrc = doctor.image || fallbackImage;
+
                 const doctorCard = document.createElement('div');
                 doctorCard.className = 'doctor-card';
                 doctorCard.innerHTML = `
                     <div class="doctor-image">
-                        <img src="${doctor.image}" alt="${doctor.name}">
+                        <img src="${imgSrc}" alt="${doctor.name}">
                     </div>
                     <div class="doctor-info">
                         <h3 class="doctor-name">${doctor.name}</h3>
@@ -1484,128 +642,70 @@
             });
         }
 
-        // Search functionality
+        // Search
         function setupSearch() {
             searchInput.addEventListener('input', function() {
                 const query = this.value.toLowerCase().trim();
-                
-                if (query.length < 1) {
-                    displayDoctors();
-                    return;
-                }
+                if (query.length < 1) { displayDoctors(); return; }
 
-                // Find matching doctors based on name, specialty, or symptoms
                 const matchedDoctors = doctors.filter(doctor => 
                     doctor.name.toLowerCase().includes(query) ||
                     doctor.specialty.toLowerCase().includes(query) ||
-                    doctor.symptoms.some(symptom => symptom.includes(query))
+                    (doctor.symptoms && doctor.symptoms.some(symptom => symptom.includes(query)))
                 );
 
                 displayDoctors(matchedDoctors);
             });
         }
 
-        // Toast notification
+        // Toast
         function showToast(message, isError = false) {
             toast.textContent = message;
             toast.className = 'toast';
             if (isError) toast.classList.add('error');
             toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // Authentication functions
-        function showAuthModal() {
-            authModal.classList.add('active');
-        }
-
-        function hideAuthModal() {
-            authModal.classList.remove('active');
-            loginError.style.display = 'none';
-            signupError.style.display = 'none';
-        }
-
-        function switchToLogin() {
-            loginTab.classList.add('active');
-            signupTab.classList.remove('active');
-            loginForm.style.display = 'flex';
-            signupForm.style.display = 'none';
-            authModalTitle.textContent = 'Login to Your Account';
-        }
-
-        function switchToSignup() {
-            signupTab.classList.add('active');
-            loginTab.classList.remove('active');
-            signupForm.style.display = 'flex';
-            loginForm.style.display = 'none';
-            authModalTitle.textContent = 'Create Your Account';
-        }
+        // Auth modal functions
+        function showAuthModal() { authModal.classList.add('active'); }
+        function hideAuthModal() { authModal.classList.remove('active'); loginError.style.display = 'none'; signupError.style.display = 'none'; }
+        function switchToLogin() { loginTab.classList.add('active'); signupTab.classList.remove('active'); loginForm.style.display = 'flex'; signupForm.style.display = 'none'; authModalTitle.textContent = 'Login to Your Account'; }
+        function switchToSignup() { signupTab.classList.add('active'); loginTab.classList.remove('active'); signupForm.style.display = 'flex'; loginForm.style.display = 'none'; authModalTitle.textContent = 'Create Your Account'; }
 
         function updateUI(user) {
             if (user) {
-                // User is signed in
                 authButtons.style.display = 'none';
                 userInfo.style.display = 'flex';
                 userName.textContent = user.displayName || user.email;
                 userAvatar.textContent = (user.displayName || user.email).charAt(0).toUpperCase();
                 showToast(`Welcome, ${user.displayName || user.email}!`);
             } else {
-                // User is signed out
                 authButtons.style.display = 'flex';
                 userInfo.style.display = 'none';
             }
         }
 
-        // Authentication event listeners
-        loginBtn.addEventListener('click', function() {
-            showAuthModal();
-            switchToLogin();
-        });
-
-        signupBtn.addEventListener('click', function() {
-            showAuthModal();
-            switchToSignup();
-        });
-
+        // Auth event listeners
+        loginBtn.addEventListener('click', () => { showAuthModal(); switchToLogin(); });
+        signupBtn.addEventListener('click', () => { showAuthModal(); switchToSignup(); });
         closeAuthModal.addEventListener('click', hideAuthModal);
         loginTab.addEventListener('click', switchToLogin);
         signupTab.addEventListener('click', switchToSignup);
+        logoutBtn.addEventListener('click', () => { auth.signOut(); showToast('You have been logged out successfully.'); });
 
-        logoutBtn.addEventListener('click', function() {
-            auth.signOut();
-            showToast('You have been logged out successfully.');
-        });
+        auth.onAuthStateChanged(user => { updateUI(user); hideAuthModal(); });
 
-        // Auth state listener
-        auth.onAuthStateChanged(user => {
-            updateUI(user);
-            hideAuthModal();
-        });
-
-        // Form submissions
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
-
-            // Show loading state
             const submitBtn = loginForm.querySelector('button[type="submit"]');
             submitBtn.classList.add('loading');
 
             auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in successfully
-                    loginError.style.display = 'none';
-                    submitBtn.classList.remove('loading');
-                })
-                .catch((error) => {
-                    loginError.textContent = error.message;
-                    loginError.style.display = 'block';
-                    submitBtn.classList.remove('loading');
-                });
+                .then(() => { loginError.style.display = 'none'; submitBtn.classList.remove('loading'); })
+                .catch((error) => { loginError.textContent = error.message; loginError.style.display = 'block'; submitBtn.classList.remove('loading'); });
         });
 
         signupForm.addEventListener('submit', function(e) {
@@ -1613,61 +713,45 @@
             const name = document.getElementById('signup-name').value;
             const email = document.getElementById('signup-email').value;
             const password = document.getElementById('signup-password').value;
-
-            // Show loading state
             const submitBtn = signupForm.querySelector('button[type="submit"]');
             submitBtn.classList.add('loading');
 
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    // Signed up successfully
                     const user = userCredential.user;
-                    return user.updateProfile({
-                        displayName: name
-                    });
+                    return user.updateProfile({ displayName: name });
                 })
-                .then(() => {
-                    signupError.style.display = 'none';
-                    submitBtn.classList.remove('loading');
-                })
-                .catch((error) => {
-                    signupError.textContent = error.message;
-                    signupError.style.display = 'block';
-                    submitBtn.classList.remove('loading');
-                });
+                .then(() => { signupError.style.display = 'none'; submitBtn.classList.remove('loading'); })
+                .catch((error) => { signupError.textContent = error.message; signupError.style.display = 'block'; submitBtn.classList.remove('loading'); });
         });
 
-        // Consultation function
+        // IMPORTANT FIX: Always redirect to index{ID}.html so ID 1 goes to index1.html
         function initiateConsultation(doctor) {
-            // Check if user is authenticated
             const user = auth.currentUser;
-            
             if (!user) {
                 showAuthModal();
                 showToast('Please log in to consult with a doctor.', true);
                 return;
             }
 
-            // Redirect to consultation page with doctor info
-            // For demo purposes, we'll redirect to placeholder pages
-            if (doctor.id >= 1 && doctor.id <= 10) {
-                const pageNumber = doctor.id === 1 ? '' : doctor.id;
-                window.location.href = `index${pageNumber}.html?doctor=${doctor.id}`;
+            if (!doctor || !doctor.id) {
+                showToast('Doctor not found.', true);
+                return;
             }
+
+            // Redirect to index{doctor.id}.html (index1.html for id=1)
+            window.location.href = `index${doctor.id}.html?doctor=${doctor.id}`;
         }
 
-        // Initialize the application
+        // Initialize app
         function init() {
             displayDoctors();
             setupSearch();
-            
-            // Check auth state on load
             const user = auth.currentUser;
             updateUI(user);
         }
 
-        // Start the application
-        init();
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
